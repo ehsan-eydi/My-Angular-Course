@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CounterComponent {
 
-  count = 3;
+  count = 10;
   showFirstExplosion = false;
   showSecondExplosion = false;
   showSmile = false;
