@@ -8,9 +8,51 @@
 
 <p style="color:red;">SHOW ME</p>
 
- -->
 
 <app-counter></app-counter>
+
+-->
+
+<div class="container-fluid">
+    <div class="row">
+        <!--Menu-->
+        <div class="col-2">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-10">
+            <!--Header-->
+            <app-header></app-header>
+            <!--Upper body-->
+            <div class="">
+                <div class="row">
+                    <!--Payment History-->
+                    <div class="col-12 col-lg-6 col-xl-8 bg-light rounded-4">
+                        <app-payment-history></app-payment-history>
+                    </div>
+                    <!--Requests-->
+                    <div class="col-12 col-lg-6 col-xl-4 bg-light rounded-4">
+                        <app-requests></app-requests>
+                    </div>
+                </div>
+            </div>
+            <!--Lower body-->
+            <div class="">
+                <div class="row">
+                    <!--Trainings-->
+                    <div class="col-12 col-lg-6 col-xl-4 bg-light rounded-4">
+                        <app-trainings></app-trainings>
+                    </div>
+                    <!--Debts-->
+                    <div class="col-12 col-lg-6 col-xl-8 bg-light rounded-4">
+                        <app-debts></app-debts>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 <!-- 

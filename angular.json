@@ -32,9 +32,17 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "public/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+							"includePaths": [
+								"./node_modules",
+								"./public/scss"
+							]
+						},
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {

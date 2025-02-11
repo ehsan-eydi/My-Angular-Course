@@ -1,0 +1,25 @@
+//$primary:#0d0ae8;
+//$success:#0de744;
+@import "bootstrap/scss/bootstrap";
+
+body{
+    //background-color: rgb(232, 232, 232);
+}
+
+.text-purple{
+    color: purple !important;
+}
+
+.text-small{
+    font-size: 1rem !important;
+}
+
+.btn-light{
+    border-color: #d6d6d6 !important;
+    background: transparent !important;
+}
+
+.btn-purple{
+    border-color: #6f07a3 !important;
+    background: #6f07a3 !important;
+}

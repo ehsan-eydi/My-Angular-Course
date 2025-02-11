@@ -1,0 +1,225 @@
+
+
+<div class="d-flex align-items-center">
+    <div class="fs-2">
+        Debts
+    </div>
+    <div class="fs-6 ms-auto text-muted">
+        See All >
+    </div>
+</div>
+
+<div class="d-flex align-items-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <i class="fa-solid fa-sort-up fa-xl text-muted"></i>
+                    <span class=" fs-5 text-muted ms-2">Student Name</span>
+                </th>
+                <th>
+                    <i class="fa-solid fa-sort fa-xl text-muted"></i>
+                    <span class=" fs-5 text-muted ms-2">Status</span>
+                </th>
+                <th>
+                    <table class="table mb-0">
+                        <tr>
+                            <i class=" fs-6 text-muted ms-4">CHF</i>
+                        </tr>
+                        <tr>
+                            <i class="fa-duotone fa-solid fa-sort fa-xl text-muted"></i>
+                            <span class=" fs-5 text-muted ms-2">Total Debt</span>
+                        </tr>
+                    </table>
+                </th>
+                <th class="text-center">
+                    <i class="fa-duotone fa-solid fa-sort fa-xl text-muted"></i>
+                    <span class=" fs-5 text-muted ms-2">Request Payment</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @for(item of student_debts; track item){
+                <tr class="align-middle">
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img [src]="item.image" width="64" height="64" class="rounded-circle">
+                            <div class="ms-2">
+                                <span class="fs-5 fw-bold">{{item.name}}</span>
+                                @if(item.category == "A1"){
+                                    <span class="badge bg-primary ms-2">{{item.category}}</span>
+                                }
+                                @if(item.category == "B"){
+                                    <span class="badge bg-success ms-2">{{item.category}}</span>
+                                }
+                                @if(item.category == "C1"){
+                                    <span class="badge bg-info ms-2">{{item.category}}</span>
+                                }
+                                <br>
+                                {{item.number}}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        @if(item.status== "Terminated"){
+                            <span class="fs-6 badge bg-danger rounded-pill">{{item.status}}</span>
+                        }
+                        @if(item.status== "In Progress"){
+                            <span class="fs-6 badge bg-warning rounded-pill">{{item.status}}</span>
+                        }
+                        @if(item.status== "Completed"){
+                            <span class="fs-6 badge bg-success rounded-pill">{{item.status}}</span>
+                        }
+                    </td>
+                    <td>
+                        <span class="fs-5">{{item.debt}}</span>
+                    </td>
+                    <td class="text-center">
+                        @if(item.request==true){
+                            <i class="fa-solid fa-hourglass-half text-muted fa-xl"></i>
+                        }
+                        @if(item.request==false){
+                            <a href="#" class="btn flex-fill btn-outline-primary rounded-pill">
+                                Request Payment
+                            </a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+<!-- 
+
+<div class="container my-5 me-0">
+    <div class="row align-items-center">
+        <div class="col mb-0">
+            <h1>Debts</h1>
+        </div>
+        <div class="col">
+            <h6 class="text-muted text-end">See All ></h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5 py-2">
+            <i class="fa-duotone fa-solid fa-sort fa-xl pe-3 text-muted"></i>
+            <h3 class="text-muted my-0">Student Name</h3>
+        </div>
+        <div class="col-2 py-2 d-flex align-items-center justify-content-center">
+            <i class="fa-duotone fa-solid fa-sort fa-xl pe-3 text-muted"></i>
+            <h3 class="text-muted my-0">Status</h3>
+        </div>
+        <div class="col-2 py-2 flex align-items-center justify-content-center">
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col">
+                    <h4 class="text-muted my-0">CHF</h4>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-1">
+                    <i class="fa-duotone fa-solid fa-sort fa-xl text-muted"></i>
+                </div>
+                <div class="col">
+                    <h3 class="text-muted my-0">Total Debt</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 py-2 d-flex align-items-center justify-content-center">
+            <i class="fa-duotone fa-solid fa-sort fa-xl pe-3 text-muted"></i>
+            <h3 class="text-muted my-0">In Progress</h3>
+        </div>
+    </div>
+    <hr class="hr hr-blurry" />
+    <div class="row">
+        <div class="col-5">
+            <div class="row my-3 align-items-center">
+                <div class="col-2">
+                    <img src="Avatar1.jpg" width="64" height="64" class="rounded-circle">
+                </div>
+                <div class="col-9 px-0">
+                    <div class="row">
+                        <div class="col pb-2 mb-1">
+                            <h5 class="card-title">Student Name <span class="badge bg-primary" style="margin-right: 8px;">A1</span></h5>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <h6 class="card-subtitle text-muted">+1234567890</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3><span class="badge bg-danger rounded-pill" style="margin-right: 8px;">Terminated</span></h3>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3 class="text-muted">12300</h3>
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-center">
+            <i class="fa-regular fa-hourglass-half text-muted fa-2xl"></i>
+        </div>
+    </div>
+    <hr class="hr hr-blurry" />
+    <div class="row">
+        <div class="col-5">
+            <div class="row my-3 align-items-center">
+                <div class="col-2">
+                    <img src="Avatar1.jpg" width="64" height="64" class="rounded-circle">
+                </div>
+                <div class="col-9 px-0">
+                    <div class="row">
+                        <div class="col pb-2 mb-1">
+                            <h5 class="card-title">Student Name <span class="badge bg-success" style="margin-right: 8px;">B1</span></h5>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <h6 class="card-subtitle text-muted">+1234567890</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3><span class="badge bg-warning rounded-pill" style="margin-right: 8px;">In Progress</span></h3>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3 class="text-muted">1200</h3>
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-center">
+            <a href="#" class="btn rounded-pill btn-primary px-5 py-3" style="width:100%">Request Payment</a>
+        </div>
+    </div>
+    <hr class="hr hr-blurry" />
+    <div class="row">
+        <div class="col-5">
+            <div class="row my-3 align-items-center">
+                <div class="col-2">
+                    <img src="Avatar1.jpg" width="64" height="64" class="rounded-circle">
+                </div>
+                <div class="col-9 px-0">
+                    <div class="row">
+                        <div class="col pb-2 mb-1">
+                            <h5 class="card-title">Student Name <span class="badge bg-success" style="margin-right: 8px;">B1</span></h5>
+                        </div>
+                    </div>
+                    <div class="row align-items-center">
+                        <h6 class="card-subtitle text-muted">+1234567890</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3><span class="badge bg-success rounded-pill" style="margin-right: 8px;">Completed</span></h3>
+        </div>
+        <div class="col-2 d-flex align-items-center justify-content-center">
+            <h3 class="text-muted">1200</h3>
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-center">
+            <i class="fa-regular fa-hourglass-half text-muted fa-2xl"></i>
+        </div>
+    </div>
+</div>
+
+ -->

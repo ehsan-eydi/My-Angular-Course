@@ -1,9 +1,15 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CounterComponent } from './counter/counter.component';
+import { SidebarComponent } from "./sidebar/sidebar.component";
+import { HeaderComponent } from "./header/header.component";
+import { PaymentHistoryComponent } from "./payment-history/payment-history.component";
+import { RequestsComponent } from "./requests/requests.component";
+import { TrainingsComponent } from './trainings/trainings.component';
+import { DebtsComponent } from "./debts/debts.component";
 
 @Component({
   selector: 'app-root',
-  imports: [CounterComponent],
+  imports: [CounterComponent, SidebarComponent, HeaderComponent, PaymentHistoryComponent, RequestsComponent, TrainingsComponent, DebtsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
